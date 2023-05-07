@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 require('dotenv').config()
-const db = require("./src/config/db.js");
+const db = require("./config/db.js");
 const consign = require("consign")
 
 consign()
-.include("./src/config/passport.js")
-.then("./src/config/middlewares.js")
+.include("./config/passport.js")
+.then("./config/middlewares.js")
 .then("./api")
-.then("./src/config/routes.js")
+.then("./config/routes.js")
 .into(app)
 
 
